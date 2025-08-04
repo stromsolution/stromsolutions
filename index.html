@@ -1,20 +1,236 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>मेरी पहली वेबसाइट</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechSolutions | Coming Soon</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body {
-            font-family: Arial;
-            text-align: center;
-            margin-top: 50px;
+        /* ===== Google Fonts ===== */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        
+        /* ===== Base Styles ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
         }
-        h1 {
-            color: blue;
+        
+        body {
+            background: #0f0c29;
+            background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+            color: #fff;
+            height: 100vh;
+            overflow: hidden;
+        }
+        
+        /* ===== Animation Keyframes ===== */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        @keyframes glow {
+            0% { text-shadow: 0 0 5px #fff; }
+            50% { text-shadow: 0 0 20px #6c63ff, 0 0 30px #6c63ff; }
+            100% { text-shadow: 0 0 5px #fff; }
+        }
+        
+        /* ===== Main Container ===== */
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            padding: 0 20px;
+            position: relative;
+        }
+        
+        /* ===== Logo/Brand ===== */
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #6c63ff;
+            animation: glow 3s infinite;
+        }
+        
+        /* ===== Coming Soon Text ===== */
+        .coming-soon {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(90deg, #6c63ff, #ff6b6b);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: pulse 2s infinite;
+        }
+        
+        @media (max-width: 768px) {
+            .coming-soon {
+                font-size: 2.5rem;
+            }
+        }
+        
+        /* ===== Countdown ===== */
+        .countdown {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            animation: float 4s ease-in-out infinite;
+        }
+        
+        .countdown div {
+            font-size: 2rem;
+            font-weight: 600;
+        }
+        
+        /* ===== Contact Info ===== */
+        .contact {
+            margin-top: 2rem;
+        }
+        
+        .contact p {
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .contact a {
+            color: #6c63ff;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        
+        .contact a:hover {
+            color: #ff6b6b;
+        }
+        
+        /* ===== Social Icons ===== */
+        .social-icons {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .social-icons a {
+            color: #fff;
+            font-size: 1.5rem;
+            transition: 0.3s;
+        }
+        
+        .social-icons a:hover {
+            color: #6c63ff;
+            transform: translateY(-5px);
+        }
+        
+        /* ===== Animated Circles ===== */
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(108, 99, 255, 0.1);
+            animation: float 6s infinite ease-in-out;
+            z-index: -1;
+        }
+        
+        .circle:nth-child(1) {
+            width: 150px;
+            height: 150px;
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+        
+        .circle:nth-child(2) {
+            width: 200px;
+            height: 200px;
+            bottom: 15%;
+            right: 10%;
+            animation-delay: 2s;
+        }
+        
+        .circle:nth-child(3) {
+            width: 100px;
+            height: 100px;
+            top: 60%;
+            left: 30%;
+            animation-delay: 4s;
         }
     </style>
 </head>
 <body>
-    <h1>नमस्ते दुनिया!</h1>
-    <p>यह मेरी पहली GitHub वेबसाइट है।</p>
+    <!-- Animated Background Circles -->
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    
+    <!-- Main Content -->
+    <div class="container">
+        <div class="logo">TechSolutions</div>
+        <h1 class="coming-soon">Coming Soon</h1>
+        
+        <div class="countdown">
+            <div id="days">03</div>
+            <div>:</div>
+            <div id="hours">48</div>
+            <div>:</div>
+            <div id="minutes">00</div>
+            <div>:</div>
+            <div id="seconds">00</div>
+        </div>
+        
+        <p>We're working hard to bring you something amazing. Stay tuned!</p>
+        
+        <div class="contact">
+            <p><i class="fas fa-envelope"></i> <a href="mailto:vivekdeveloper3232@gmail.com">vivekdeveloper3232@gmail.com</a></p>
+            <p><i class="fas fa-phone"></i> <a href="tel:+91 9769300534">+91 8898322588 </a></p>
+        </div>
+        
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </div>
+    
+    <!-- Countdown Timer Script -->
+    <script>
+        // Set the launch date (YYYY, MM-1, DD)
+        const launchDate = new Date(2024, 11, 31).getTime();
+        
+        // Update countdown every second
+        const countdown = setInterval(() => {
+            const now = new Date().getTime();
+            const distance = launchDate - now;
+            
+            // Time calculations
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            // Display results
+            document.getElementById("days").innerHTML = days.toString().padStart(2, '0');
+            document.getElementById("hours").innerHTML = hours.toString().padStart(2, '0');
+            document.getElementById("minutes").innerHTML = minutes.toString().padStart(2, '0');
+            document.getElementById("seconds").innerHTML = seconds.toString().padStart(2, '0');
+            
+            // If countdown is finished
+            if (distance < 0) {
+                clearInterval(countdown);
+                document.querySelector(".coming-soon").innerHTML = "We're Live!";
+                document.querySelector(".countdown").style.display = "none";
+            }
+        }, 1000);
+    </script>
 </body>
 </html>
